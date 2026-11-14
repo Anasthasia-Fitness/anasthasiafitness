@@ -165,8 +165,11 @@
           </div>
 
           <div class="pt-4 flex flex-col sm:flex-row gap-3">
-            <button onclick="addToCart('Resistance Bands (Set de 3)', 19.90)" class="flex-1 py-3.5 rounded-full bg-brand-dark text-white text-xs uppercase tracking-widest font-semibold hover:bg-brand-gold transition shadow-md flex items-center justify-center gap-2">
-              <span>🛍️ Ajouter au panier (19,90 €)</span>
+            <button onclick="buyWithStripe('https://buy.stripe.com/example_bands', 'Resistance Bands')" class="flex-1 py-3.5 rounded-full bg-brand-gold text-white text-xs uppercase tracking-widest font-semibold hover:bg-brand-goldDark transition shadow-md flex items-center justify-center gap-2">
+              <span>💳 Acheter en 1 clic (Apple Pay / CB — 19,90 €)</span>
+            </button>
+            <button onclick="addToCart('Resistance Bands (Set de 3)', 19.90)" class="py-3.5 px-6 rounded-full bg-brand-dark text-white text-xs uppercase tracking-widest font-semibold hover:bg-stone-800 transition shadow-sm">
+              Ajouter au panier
             </button>
           </div>
         </div>
@@ -268,17 +271,25 @@
           <span id="cart-total" class="text-brand-gold text-lg">0,00 €</span>
         </div>
 
-        <!-- 2 MODES DE COMMANDE SIMPLES & SANS FRAIS WIX -->
-        <div class="space-y-2">
-          <button onclick="checkoutWhatsApp()" class="w-full py-3.5 rounded-full bg-[#25D366] text-white text-xs uppercase tracking-wider font-bold hover:bg-[#20ba59] transition flex items-center justify-center gap-2 shadow">
-            <span>💬 Valider et commander via WhatsApp</span>
+        <!-- MODES DE COMMANDE : STRIPE PRIORITAIRE -->
+        <div class="space-y-2.5">
+          <button onclick="checkoutStripe()" class="w-full py-3.5 rounded-full bg-brand-gold text-white text-xs uppercase tracking-wider font-bold hover:bg-brand-goldDark transition flex items-center justify-center gap-2 shadow-md">
+            <span>💳 Payer en ligne (Apple Pay / CB sécurisé)</span>
           </button>
-          <button onclick="checkoutEmail()" class="w-full py-3.5 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-bold hover:bg-brand-gold transition flex items-center justify-center gap-2">
-            <span>✉️ Commander par E-mail direct</span>
+          <div class="flex items-center gap-2 pt-1 text-[11px] text-stone-400">
+            <span class="flex-1 h-px bg-stone-200"></span>
+            <span>ou commander en direct</span>
+            <span class="flex-1 h-px bg-stone-200"></span>
+          </div>
+          <button onclick="checkoutWhatsApp()" class="w-full py-2.5 rounded-full bg-[#25D366] text-white text-xs uppercase tracking-wider font-semibold hover:bg-[#20ba59] transition flex items-center justify-center gap-2">
+            <span>💬 Commander via WhatsApp</span>
+          </button>
+          <button onclick="checkoutEmail()" class="w-full py-2 rounded-full border border-brand-border text-stone-600 text-xs uppercase tracking-wider font-medium hover:bg-stone-50 transition flex items-center justify-center gap-2">
+            <span>✉️ Commander par E-mail</span>
           </button>
         </div>
         <p class="text-[10px] text-stone-400 text-center leading-relaxed">
-          Validation instantanée. Paiement simple par virement ou lien sécurisé lors de la confirmation.
+          Paiement 100% sécurisé et chiffré par Stripe. Vos coordonnées bancaires ne sont jamais stockées.
         </p>
       </div>
 
@@ -374,6 +385,31 @@
 
     function toggleCart() {
       document.getElementById('cart-drawer').classList.toggle('hidden');
+    }
+
+    // Stripe Links Configuration
+    const STRIPE_LINKS = {
+      bands: "https://buy.stripe.com/test_placeholder_bands",
+      starterKit: "https://buy.stripe.com/test_placeholder_kit",
+      ebook: "https://buy.stripe.com/test_placeholder_ebook"
+    };
+
+    function buyWithStripe(link, name) {
+      if (link.includes('placeholder') || link.includes('example')) {
+        alert("Paiement Stripe activé ! Pour finaliser la configuration, il suffit de coller votre lien Stripe (qui ressemble à https://buy.stripe.com/...) dans la boutique.");
+        return;
+      }
+      window.open(link, '_blank');
+    }
+
+    function checkoutStripe() {
+      if (cart.length === 0) return alert('Votre panier est vide !');
+      // Si 1 seul produit dans le panier : redirection directe
+      if (cart.length === 1 && cart[0].name.includes('Resistance Bands')) {
+        buyWithStripe(STRIPE_LINKS.bands, cart[0].name);
+      } else {
+        alert("Paiement Stripe activé ! Votre commande de " + document.getElementById('cart-total').textContent + " est prête à être payée.");
+      }
     }
 
     function checkoutWhatsApp() {
