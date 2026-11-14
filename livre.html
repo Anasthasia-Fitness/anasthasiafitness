@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon Livre « Body & Chef » | Anasthasia Fitness</title>
-  <meta name="description" content="Découvrez le livre officiel d'Anasthasia Fitness publié chez Hachette Pratique : 8 semaines de sport et de recettes gourmandes de grands chefs dont Cédric Grolet.">
+  <meta name="description" content="Découvrez le livre officiel d'Anasthasia Fitness publié chez Hachette Pratique : 8 semaines de sport et de recettes gourmandes de grands chefs dont Cédric Grolet. Disponible en E-book immédiat et à la Fnac.">
   
   <script>
     if (location.hostname.endsWith('github.io') && location.pathname.endsWith('/anasthasiafitness')) {
@@ -54,7 +54,7 @@
   <div class="bg-brand-dark text-brand-cream text-[11px] py-2.5 px-4 text-center tracking-widest uppercase font-medium w-full">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
       <span class="hidden sm:inline">Paris 15e • Diplômée d'État BPJEPS AGFF</span>
-      <span>✨ Le livre « Body & Chef » disponible en librairie • Coaching privé Paris & à distance</span>
+      <span>✨ E-Book « Body & Chef » disponible en téléchargement immédiat • Édition papier sur la Fnac</span>
       <a href="https://instagram.com/Anasthasia_fitness" target="_blank" class="hover:text-brand-gold transition underline hidden sm:inline">@Anasthasia_fitness</a>
     </div>
   </div>
@@ -113,18 +113,20 @@
         
         <!-- Couverture Réelle du Livre -->
         <div class="md:col-span-5 flex justify-center w-full">
-          <div class="w-full max-w-xs mx-auto p-4 bg-white rounded-3xl shadow-xl border border-brand-border">
+          <div class="w-full max-w-sm mx-auto p-4 bg-white rounded-3xl shadow-xl border border-brand-border">
             <img src="assets/book-cover.jpg" 
                  alt="Livre Body & Chef Anasthasia Fitness Hachette" 
                  class="w-full h-auto rounded-xl shadow-sm block mx-auto"
                  onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='https://raw.githubusercontent.com/Anasthasia-Fitness/anasthasiafitness/main/assets/book-cover.jpg';}">
             <div class="text-center mt-3 pt-2 border-t border-brand-border">
-              <span class="text-[10px] tracking-widest uppercase font-semibold text-stone-500">Éditions Hachette Pratique</span>
+              <span class="text-[10px] tracking-widest uppercase font-semibold text-stone-500">
+                Recettes de Cédric Grolet & Thomas Danigo • Hachette Pratique
+              </span>
             </div>
           </div>
         </div>
 
-        <!-- Présentation Textuelle -->
+        <!-- Présentation Textuelle & Options d'Achat -->
         <div class="md:col-span-7 space-y-6">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-cream text-brand-gold text-xs font-semibold uppercase tracking-wider">
             ★ Le livre événement Sport & Gastronomie
@@ -139,20 +141,49 @@
             <strong>8 semaines de sport et de nutrition</strong> pour métamorphoser votre corps sans vous priver. Conçu en collaboration avec des chefs de renom, notamment le chef pâtissier <strong>Cédric Grolet</strong> (que j'ai personnellement accompagné dans sa transformation) et le chef <strong>Thomas Danigo</strong>.
           </p>
 
-          <!-- Boutons de commande chez les libraires -->
-          <div class="space-y-3 pt-2">
-            <span class="block text-xs uppercase tracking-wider text-stone-500 font-medium">Disponible chez votre libraire et en ligne :</span>
-            <div class="flex flex-wrap gap-3">
-              <a href="https://www.fnac.com" target="_blank" class="px-6 py-3 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-gold transition shadow-sm">
-                Commander sur Fnac
-              </a>
-              <a href="https://www.cultura.com" target="_blank" class="px-6 py-3 rounded-full bg-white border border-brand-border text-brand-dark text-xs uppercase tracking-wider font-semibold hover:bg-brand-cream transition">
-                Cultura
-              </a>
-              <a href="https://www.amazon.fr" target="_blank" class="px-6 py-3 rounded-full bg-white border border-brand-border text-brand-dark text-xs uppercase tracking-wider font-semibold hover:bg-brand-cream transition">
-                Amazon
-              </a>
+          <!-- OPTION 1 : L'E-BOOK EN PREMIER (MIS EN AVANT) -->
+          <div class="bg-white p-6 sm:p-7 rounded-3xl border-2 border-brand-gold shadow-md space-y-4">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-brand-border pb-3">
+              <div>
+                <span class="inline-block bg-brand-gold text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full mb-1">
+                  ⭐ Recommandé • Envoi direct par Anasthasia
+                </span>
+                <h3 class="text-lg font-serif-lux text-brand-dark font-semibold">
+                  Version E-Book Numérique (PDF HD)
+                </h3>
+              </div>
+              <div class="text-2xl font-serif-lux font-bold text-brand-gold">
+                12,90 €
+              </div>
             </div>
+
+            <p class="text-xs text-stone-600 font-light leading-relaxed">
+              Recevez l'intégralité du livre immédiatement sur tous vos écrans (smartphone, tablette, ordinateur) au format haute définition. <strong>Je vous l'envoie moi-même directement sur votre adresse e-mail dès réception de votre commande.</strong>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-1">
+              <button onclick="orderEbookDirect()" class="flex-1 py-3 px-6 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-gold transition text-center shadow-sm">
+                Commander mon E-Book (12,90 €) &rarr;
+              </button>
+              <button onclick="orderEbookWhatsApp()" class="py-3 px-6 rounded-full bg-[#25D366] text-white text-xs uppercase tracking-wider font-semibold hover:bg-emerald-600 transition text-center shadow-sm flex items-center justify-center gap-1.5">
+                <span>WhatsApp</span>
+              </button>
+            </div>
+            
+            <div class="text-[11px] text-stone-400 text-center">
+              Également cumulable avec les bandes de résistance dans <a href="boutique.html" class="underline text-brand-gold hover:text-brand-dark">la boutique officielle</a>.
+            </div>
+          </div>
+
+          <!-- OPTION 2 : LIVRE PHYSIQUE (UNIQUEMENT LA FNAC) -->
+          <div class="bg-white/80 p-5 rounded-2xl border border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <div class="text-xs uppercase tracking-wider text-stone-500 font-medium">Édition Papier Broché (128 pages)</div>
+              <div class="text-sm font-serif-lux text-brand-dark font-medium mt-0.5">Vous préférez le livre papier relié ?</div>
+            </div>
+            <a href="https://www.fnac.com/o12083130/Anasthasia-Fitness/w-4" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full bg-white border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition text-xs uppercase tracking-wider font-semibold shrink-0 shadow-sm text-center">
+              Commander sur la Fnac &rarr;
+            </a>
           </div>
 
         </div>
@@ -160,53 +191,117 @@
       </div>
     </section>
 
-    <!-- Sommaire & Contenu du Livre -->
+    <!-- GALERIE DES EXTRAITS OFFICIELS DU LIVRE -->
     <section class="px-4 sm:px-6 lg:px-8 py-16 max-w-6xl mx-auto space-y-12 w-full">
       
-      <div class="text-center max-w-xl mx-auto">
-        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Le Contenu</span>
-        <h2 class="text-2xl md:text-3xl font-serif-lux text-brand-dark mt-1">Ce que vous trouverez dans le livre</h2>
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Immersion Exclusive</span>
+        <h2 class="text-2xl sm:text-3xl font-serif-lux text-brand-dark">Plongez au cœur de l'ouvrage</h2>
+        <p class="text-xs sm:text-sm text-stone-600 font-light">
+          Découvrez quelques pages intérieures de « Body & Chef », fruit de plusieurs mois d'élaboration entre sport de pointe et gastronomie étoilée.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <div class="p-8 rounded-3xl bg-white border border-brand-border shadow-sm space-y-3">
-          <div class="text-3xl text-brand-gold font-serif-lux">01</div>
-          <h3 class="text-lg font-serif-lux text-brand-dark">8 Semaines de Training</h3>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-            Une programmation évolutive réalisable à domicile, mixant circuits métaboliques, renforcement profond et mobilité pour brûler les graisses et gainer la sangle abdominale.
-          </p>
+        <!-- Extrait 1 : Les Chefs -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-brand-border shadow-sm flex flex-col justify-between group">
+          <div class="p-6 bg-stone-50 border-b border-brand-border">
+            <img src="assets/book-chefs.jpg" 
+                 alt="Cédric Grolet et Thomas Danigo dans le livre Body & Chef" 
+                 class="w-full h-auto rounded-xl shadow-sm object-contain"
+                 onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='https://raw.githubusercontent.com/Anasthasia-Fitness/anasthasiafitness/main/assets/book-chefs.jpg';}">
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold">Pages 28 - 29</span>
+            <h3 class="text-lg font-serif-lux text-brand-dark">La collaboration avec Cédric Grolet & Thomas Danigo</h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed">
+              Cédric Grolet (chef pâtissier du Meurice, meilleur pâtissier du monde) et Thomas Danigo (chef de l'Hôtel Monsieur George) partagent leurs recettes adaptées à l'effort pour allier équilibre et plaisir gustatif.
+            </p>
+          </div>
         </div>
 
-        <div class="p-8 rounded-3xl bg-white border border-brand-border shadow-sm space-y-3">
-          <div class="text-3xl text-brand-gold font-serif-lux">02</div>
-          <h3 class="text-lg font-serif-lux text-brand-dark">+40 Recettes Gourmandes</h3>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-            Des plats équilibrés créés avec des chefs étoilés. Du petit-déjeuner au dîner, des recettes faciles qui réconcilient plaisir des papilles et santé.
-          </p>
+        <!-- Extrait 2 : Le Sommaire -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-brand-border shadow-sm flex flex-col justify-between group">
+          <div class="p-6 bg-stone-50 border-b border-brand-border">
+            <img src="assets/book-sommaire.jpg" 
+                 alt="Sommaire officiel du livre Body & Chef" 
+                 class="w-full h-auto rounded-xl shadow-sm object-contain"
+                 onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='https://raw.githubusercontent.com/Anasthasia-Fitness/anasthasiafitness/main/assets/book-sommaire.jpg';}">
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold">Sommaire Officiel</span>
+            <h3 class="text-lg font-serif-lux text-brand-dark">8 Semaines découpées en 3 Phases Clés</h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed">
+              Phase 1 (Déclic), Phase 2 (Progression) et Phase 3 (Consolidation). Des astuces d'entraînement, le focus hydratation et des menus concrets pour chaque jour de la semaine.
+            </p>
+          </div>
         </div>
 
-        <div class="p-8 rounded-3xl bg-white border border-brand-border shadow-sm space-y-3">
-          <div class="text-3xl text-brand-gold font-serif-lux">03</div>
-          <h3 class="text-lg font-serif-lux text-brand-dark">La Méthode Mindset</h3>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
-            Mes secrets pour ancrer des habitudes durables, gérer les repas au restaurant sans culpabiliser et maintenir votre énergie au sommet toute l'année.
-          </p>
+        <!-- Extrait 3 : Fiches Entraînement & Nutrition -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-brand-border shadow-sm flex flex-col justify-between group">
+          <div class="p-6 bg-stone-50 border-b border-brand-border">
+            <img src="assets/book-inside.jpg" 
+                 alt="Double page Hydratation et Nutrition" 
+                 class="w-full h-auto rounded-xl shadow-sm object-contain"
+                 onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='https://raw.githubusercontent.com/Anasthasia-Fitness/anasthasiafitness/main/assets/book-inside.jpg';}">
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold">Pages 10 - 11</span>
+            <h3 class="text-lg font-serif-lux text-brand-dark">Focus Hydratation & Calcul des Macros</h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed">
+              Comment doser ses protéines, glucides et lipides simplement à l'aide de sa main, et pourquoi l'hydratation est la clé de 20% de vos performances sportives.
+            </p>
+          </div>
+        </div>
+
+        <!-- Extrait 4 : 4ème de Couverture -->
+        <div class="bg-white rounded-3xl overflow-hidden border border-brand-border shadow-sm flex flex-col justify-between group">
+          <div class="p-6 bg-stone-50 border-b border-brand-border">
+            <img src="assets/book-back.jpg" 
+                 alt="4ème de couverture Hachette Pratique" 
+                 class="w-full h-auto rounded-xl shadow-sm object-contain"
+                 onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='https://raw.githubusercontent.com/Anasthasia-Fitness/anasthasiafitness/main/assets/book-back.jpg';}">
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold">Dos de Couverture</span>
+            <h3 class="text-lg font-serif-lux text-brand-dark">« Adopter une alimentation saine et se sentir bien »</h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed">
+              Le programme parfait qui propose le juste équilibre entre efforts physiques, plaisirs gourmands et confiance en soi. Publié chez Hachette Pratique.
+            </p>
+          </div>
         </div>
 
       </div>
 
-      <!-- Collaboration Cédric Grolet -->
-      <div class="bg-white p-8 md:p-10 rounded-3xl border border-brand-border shadow-sm flex flex-col md:flex-row gap-8 items-center">
-        <div class="w-20 h-20 rounded-full bg-brand-cream text-3xl flex items-center justify-center shrink-0">
+      <!-- Témoignage Cédric Grolet -->
+      <div class="bg-white p-8 md:p-12 rounded-3xl border border-brand-border shadow-md flex flex-col md:flex-row gap-8 items-center">
+        <div class="w-20 h-20 rounded-full bg-brand-cream text-3xl flex items-center justify-center shrink-0 border border-brand-border">
           👨‍🍳
         </div>
         <div class="space-y-3">
-          <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Témoignage Clé</span>
-          <h3 class="text-xl font-serif-lux text-brand-dark">La transformation de Cédric Grolet</h3>
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Témoignage de Cédric Grolet</span>
+          <h3 class="text-xl font-serif-lux text-brand-dark">« Anasthasia a réussi l'exploit de transformer ma condition physique »</h3>
           <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light italic">
-            « Anasthasia a réussi l'exploit de transformer ma condition physique et ma silhouette malgré mes journées de travail intenses en cuisine. Sa méthode allie une discipline rigoureuse à un amour profond de la bonne nourriture. »
+            « La transformation physique de Cédric Grolet, la star française de la pâtisserie, c'est elle ! Grâce à son expertise, à son écoute et à son dynamisme, Anasthasia a trouvé le programme parfait qui allie rigueur sportive et plaisir de la table. »
           </p>
+        </div>
+      </div>
+
+      <!-- Bandeau CTA Bas de Page E-Book -->
+      <div class="bg-brand-dark text-brand-cream p-8 sm:p-12 rounded-3xl text-center space-y-6">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Commencez dès aujourd'hui</span>
+        <h2 class="text-2xl sm:text-4xl font-serif-lux">Prêt(e) pour votre métamorphose en 8 semaines ?</h2>
+        <p class="text-xs sm:text-sm text-stone-300 max-w-xl mx-auto font-light leading-relaxed">
+          Commandez votre exemplaire E-Book au format PDF (12,90 €) et recevez-le directement sur votre boîte mail pour débuter vos séances où que vous soyez.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+          <button onclick="orderEbookDirect()" class="px-8 py-3.5 rounded-full bg-brand-gold text-white text-xs uppercase tracking-widest font-semibold hover:bg-brand-goldDark transition shadow-md">
+            Recevoir mon E-Book par e-mail (12,90 €) &rarr;
+          </button>
+          <a href="https://www.fnac.com/o12083130/Anasthasia-Fitness/w-4" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 rounded-full bg-transparent border border-stone-600 text-stone-300 hover:text-white hover:border-white transition text-xs uppercase tracking-widest font-semibold">
+            Commander le livre papier sur Fnac
+          </a>
         </div>
       </div>
 
@@ -227,7 +322,7 @@
       <div class="flex flex-wrap justify-center gap-6 text-xs text-stone-300 uppercase tracking-wider font-medium">
         <a href="index.html" class="hover:text-white transition">Home</a>
         <a href="philosophie.html" class="hover:text-white transition">Ma Philosophie</a>
-        <a href="livre.html" class="text-brand-gold">Mon Livre</a>
+        <a href="livre.html" class="text-brand-gold font-bold">Mon Livre</a>
         <a href="boutique.html" class="hover:text-white transition">Boutique</a>
         <a href="reserver.html" class="hover:text-white transition">Réserver</a>
         <a href="contact.html" class="hover:text-white transition">Contact</a>
@@ -243,6 +338,19 @@
   </footer>
 
   <script>
+    // Commande directe de l'E-book par email
+    function orderEbookDirect() {
+      const subject = "Commande E-Book Body & Chef (12,90 €)";
+      const body = "Bonjour Anasthasia,\n\nJe souhaite commander votre E-Book « Body & Chef » au format PDF (12,90 €).\n\nMes coordonnées :\nNom & Prénom :\nAdresse e-mail pour recevoir le fichier :\nTéléphone :\n\nMerci !";
+      window.location.href = `mailto:anasthasia.fitness@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // Commande directe par WhatsApp
+    function orderEbookWhatsApp() {
+      const text = "Bonjour Anasthasia ! Je souhaite commander votre E-Book « Body & Chef » au format PDF (12,90 €). Pouvez-vous m'indiquer la marche à suivre pour le paiement et l'envoi sur mon adresse e-mail ?";
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileBtn.addEventListener('click', () => {
