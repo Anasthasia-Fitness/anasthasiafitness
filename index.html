@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth overflow-x-hidden w-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anasthasia Fitness | Coaching Privé Paris & Auteure Body & Chef</title>
   <meta name="description" content="Coaching sportif et nutritionnel sur-mesure à Paris par Anasthasia, Personal Trainer diplômée d'État BPJEPS, vice-championne IFBB et auteure du livre Body & Chef (Hachette).">
   
+  <script>
+    // Correction automatique pour TV & navigateurs : s'assure que le chemin se termine par /
+    if (location.hostname.endsWith('github.io') && location.pathname.endsWith('/anasthasiafitness')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -31,13 +38,22 @@
     }
   </script>
   <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      background-color: #F9F8F5;
+    }
+    img { max-width: 100%; height: auto; }
     .font-serif-lux { font-family: "Didot", "Playfair Display", "Baskerville", "Georgia", serif; }
   </style>
 </head>
-<body class="bg-brand-cream text-brand-dark font-sans antialiased selection:bg-brand-gold selection:text-white">
+<body class="bg-brand-cream text-brand-dark font-sans antialiased selection:bg-brand-gold selection:text-white w-full overflow-x-hidden">
 
   <!-- Top Announcement Bar -->
-  <div class="bg-brand-dark text-brand-cream text-[11px] py-2 px-4 text-center tracking-widest uppercase font-medium">
+  <div class="bg-brand-dark text-brand-cream text-[11px] py-2.5 px-4 text-center tracking-widest uppercase font-medium w-full">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
       <span class="hidden sm:inline">Paris 15e • Diplômée d'État BPJEPS AGFF</span>
       <span>✨ Le livre « Body & Chef » disponible en librairie • Coaching privé Paris & à distance</span>
@@ -46,15 +62,15 @@
   </div>
 
   <!-- Header / Navigation Bar -->
-  <header class="sticky top-0 z-50 bg-brand-cream/95 backdrop-blur-md border-b border-brand-border">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+  <header class="sticky top-0 z-50 bg-brand-cream/95 backdrop-blur-md border-b border-brand-border w-full">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
       
       <!-- Logo -->
       <a href="index.html" class="flex items-center gap-3 group">
         <img src="assets/logo.png" 
              alt="Logo Anasthasia Fitness" 
              class="w-10 h-10 object-contain rounded-full bg-white p-0.5 border border-brand-border shadow-sm group-hover:scale-105 transition"
-             onerror="this.style.display='none'">
+             onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='https://raw.githubusercontent.com/Anasthasia-Fitness/anasthasiafitness/main/assets/logo.png';}">
         <div>
           <span class="text-xl font-serif-lux tracking-widest uppercase font-semibold text-brand-dark block leading-none">
             Anasthasia
@@ -64,7 +80,7 @@
       </a>
 
       <!-- Menu Desktop -->
-      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-medium text-stone-700">
+      <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-widest font-medium text-stone-700">
         <a href="index.html" class="text-brand-gold border-b-2 border-brand-gold pb-0.5">Home</a>
         <a href="philosophie.html" class="hover:text-brand-gold transition pb-0.5">Ma philosophie</a>
         <a href="livre.html" class="hover:text-brand-gold transition pb-0.5">Mon livre</a>
@@ -102,9 +118,9 @@
   </header>
 
   <!-- HERO SECTION : Option A Studio & Sérénité -->
-  <main>
-    <section class="px-6 md:px-12 py-12 md:py-20 bg-gradient-to-b from-brand-cream via-[#F4EFE9] to-brand-cream border-b border-brand-border">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-5xl mx-auto">
+  <main class="w-full overflow-x-hidden">
+    <section class="px-4 sm:px-6 lg:px-8 py-12 md:py-20 bg-gradient-to-b from-brand-cream via-[#F4EFE9] to-brand-cream border-b border-brand-border w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
         
         <!-- Colonne Texte & Promesse -->
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left order-2 lg:order-1">
@@ -119,7 +135,7 @@
           </h1>
 
           <!-- Votre citation authentique de votre site Wix -->
-          <div class="bg-white/80 backdrop-blur-sm p-5 rounded-2xl border border-brand-border shadow-sm text-left">
+          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-brand-border shadow-sm text-left">
             <blockquote class="text-xs sm:text-sm text-stone-700 font-serif-lux italic leading-relaxed">
               « L'objectif de mon site Anasthasia Fitness est avant tout de partager tous mes secrets avec vous. Ce sont ces secrets, ces méthodes et cet état d'esprit qui m'ont menée vers le succès. »
             </blockquote>
@@ -147,15 +163,17 @@
         </div>
 
         <!-- Colonne Photo Officielle Nette & Pure -->
-        <div class="lg:col-span-5 flex justify-center order-1 lg:order-2">
-          <div class="relative w-full max-w-sm">
-            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-[6px] border-white bg-white group">
+        <div class="lg:col-span-5 flex justify-center order-1 lg:order-2 w-full">
+          <div class="relative w-full max-w-sm sm:max-w-md mx-auto">
+            <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
               <img src="assets/anasthasia-portrait.jpg" 
                    alt="Anasthasia - Coach Sportif Diplômée Paris" 
-                   class="w-full h-[440px] md:h-[480px] object-cover object-center group-hover:scale-102 transition duration-500">
+                   class="w-full h-auto object-cover object-center block"
+                   style="height: 480px; max-height: 65vh;"
+                   onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='https://raw.githubusercontent.com/Anasthasia-Fitness/anasthasiafitness/main/assets/anasthasia-portrait.jpg';}">
               
-              <div class="py-2.5 px-4 bg-white flex items-center justify-between border-t border-brand-border">
-                <span class="text-[11px] font-serif-lux font-semibold text-brand-dark tracking-wider uppercase">Anasthasia</span>
+              <div class="py-3 px-5 bg-white flex items-center justify-between border-t border-brand-border">
+                <span class="text-xs font-serif-lux font-semibold text-brand-dark tracking-wider uppercase">Anasthasia</span>
                 <span class="text-[10px] text-brand-gold font-medium uppercase tracking-widest">Paris 15e • IFBB Athlete</span>
               </div>
             </div>
@@ -165,41 +183,38 @@
       </div>
     </section>
 
-    <!-- BANDEAU DE RÉASSURANCE OFFICIEL -->
-    <section class="border-b border-brand-border bg-white py-6 px-6">
-      <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-center">
-        <div>
-          <div class="text-base font-serif-lux text-brand-dark">Hachette Pratique</div>
-          <div class="text-[10px] text-stone-500 uppercase tracking-wider">Éditeur du livre officiel</div>
+    <!-- BANDEAU DE RÉASSURANCE OFFICIEL (Grid 4 colonnes stable) -->
+    <section class="border-b border-brand-border bg-white py-8 px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        <div class="p-3">
+          <div class="text-base sm:text-lg font-serif-lux text-brand-dark font-medium">Hachette Pratique</div>
+          <div class="text-[10px] text-stone-500 uppercase tracking-wider mt-1">Éditeur du livre officiel</div>
         </div>
-        <div class="h-8 w-px bg-brand-border hidden md:block"></div>
-        <div>
-          <div class="text-base font-serif-lux text-brand-dark">Cédric Grolet</div>
-          <div class="text-[10px] text-stone-500 uppercase tracking-wider">Transformation & Recettes</div>
+        <div class="p-3">
+          <div class="text-base sm:text-lg font-serif-lux text-brand-dark font-medium">Cédric Grolet</div>
+          <div class="text-[10px] text-stone-500 uppercase tracking-wider mt-1">Transformation & Recettes</div>
         </div>
-        <div class="h-8 w-px bg-brand-border hidden md:block"></div>
-        <div>
-          <div class="text-base font-serif-lux text-brand-dark">Méthode de Gasquet</div>
-          <div class="text-[10px] text-stone-500 uppercase tracking-wider">Pilates & Posture protégée</div>
+        <div class="p-3">
+          <div class="text-base sm:text-lg font-serif-lux text-brand-dark font-medium">Méthode de Gasquet</div>
+          <div class="text-[10px] text-stone-500 uppercase tracking-wider mt-1">Pilates & Posture protégée</div>
         </div>
-        <div class="h-8 w-px bg-brand-border hidden md:block"></div>
-        <div>
-          <div class="text-base font-serif-lux text-brand-dark">IFBB France 2022</div>
-          <div class="text-[10px] text-stone-500 uppercase tracking-wider">Vice-Championne Bikini</div>
+        <div class="p-3">
+          <div class="text-base sm:text-lg font-serif-lux text-brand-dark font-medium">IFBB France 2022</div>
+          <div class="text-[10px] text-stone-500 uppercase tracking-wider mt-1">Vice-Championne Bikini</div>
         </div>
       </div>
     </section>
 
     <!-- 3 ACCÈS DIRECTS : LES 3 PILIERS (Structure Wix respectée) -->
-    <section class="px-6 md:px-12 py-16 bg-brand-cream">
-      <div class="max-w-5xl mx-auto space-y-12">
+    <section class="px-4 sm:px-6 lg:px-8 py-16 bg-brand-cream w-full">
+      <div class="max-w-6xl mx-auto space-y-12">
         
         <div class="text-center max-w-xl mx-auto">
           <span class="text-[11px] uppercase tracking-widest text-brand-gold font-semibold">Une offre complète</span>
           <h2 class="text-2xl md:text-3xl font-serif-lux text-brand-dark mt-1">Trois portes d'entrée vers vos objectifs</h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           
           <!-- Pilier 1 : Mon Livre -->
           <div class="p-8 rounded-3xl bg-white border border-brand-border hover:border-brand-gold transition shadow-sm text-center flex flex-col justify-between group">
@@ -220,11 +235,11 @@
           </div>
 
           <!-- Pilier 2 : Boutique -->
-          <div class="p-8 rounded-3xl bg-white border-2 border-brand-gold/40 hover:border-brand-gold transition shadow-md text-center flex flex-col justify-between group relative">
-            <span class="absolute -top-3 right-6 bg-brand-gold text-white text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full">
-              E-Shop Officiel
-            </span>
+          <div class="p-8 rounded-3xl bg-white border-2 border-brand-gold/40 hover:border-brand-gold transition shadow-md text-center flex flex-col justify-between group">
             <div>
+              <span class="inline-block bg-brand-gold text-white text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-3">
+                E-Shop Officiel
+              </span>
               <div class="w-14 h-14 rounded-full bg-brand-cream mx-auto flex items-center justify-center text-2xl shadow-sm mb-4 text-brand-gold">
                 🎀
               </div>
@@ -264,14 +279,15 @@
     </section>
 
     <!-- SECTION HISTOIRE / QUI SUIS-JE -->
-    <section class="px-6 md:px-12 py-16 bg-[#F4EFE9] border-t border-brand-border">
-      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+    <section class="px-4 sm:px-6 lg:px-8 py-16 bg-[#F4EFE9] border-t border-brand-border w-full">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <div class="md:col-span-5 flex justify-center">
-          <div class="w-64 rounded-2xl overflow-hidden border-2 border-white shadow-lg bg-white">
+        <div class="md:col-span-5 flex justify-center w-full">
+          <div class="w-full max-w-sm rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-white">
             <img src="assets/anasthasia-portrait.jpg" 
                  alt="Anasthasia Fitness" 
-                 class="w-full h-72 object-cover">
+                 class="w-full h-80 object-cover object-center block"
+                 onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='https://raw.githubusercontent.com/Anasthasia-Fitness/anasthasiafitness/main/assets/anasthasia-portrait.jpg';}">
             <div class="p-3 text-center bg-white">
               <div class="text-xs font-serif-lux font-semibold text-brand-dark">Anasthasia</div>
               <div class="text-[10px] text-stone-500">« Le sport doit être une célébration, jamais une punition. »</div>
@@ -301,8 +317,8 @@
   </main>
 
   <!-- FOOTER OFFICIEL -->
-  <footer class="bg-brand-dark text-brand-cream px-6 md:px-12 py-12 border-t border-stone-800">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+  <footer class="bg-brand-dark text-brand-cream px-4 sm:px-6 lg:px-8 py-12 border-t border-stone-800 w-full">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
       <div>
         <div class="text-lg font-serif-lux tracking-widest uppercase text-white font-semibold">
           Anasthasia <span class="text-brand-gold font-light text-xs">Fitness</span>
@@ -322,7 +338,7 @@
       </div>
     </div>
 
-    <div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-[10px] text-stone-500">
+    <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-[10px] text-stone-500">
       <div>© 2026 Anasthasia Fitness. Tous droits réservés. (Site indépendant hébergé sans Wix).</div>
       <div class="flex gap-4 mt-2 sm:mt-0">
         <a href="contact.html" class="hover:underline">Mentions Légales</a>
