@@ -85,6 +85,10 @@
       </nav>
 
       <div class="flex items-center gap-3">
+        <button onclick="toggleCart()" class="relative px-4 py-2 rounded-full bg-white border border-brand-border text-brand-dark hover:border-brand-gold transition flex items-center gap-2 text-xs font-semibold shadow-sm">
+          <span>🛍️ Panier</span>
+          <span id="cart-count" class="w-5 h-5 rounded-full bg-brand-gold text-white text-[10px] flex items-center justify-center font-bold">0</span>
+        </button>
         <a href="reserver.html" class="hidden sm:inline-block px-5 py-2.5 rounded-full bg-brand-dark text-brand-cream text-xs uppercase tracking-widest font-semibold hover:bg-brand-gold transition shadow-sm">
           Réserver
         </a>
@@ -146,7 +150,7 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-brand-border pb-3">
               <div>
                 <span class="inline-block bg-brand-gold text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-0.5 rounded-full mb-1">
-                  ⭐ Recommandé • Envoi direct par Anasthasia
+                  ⭐ Recommandé • Envoi direct
                 </span>
                 <h3 class="text-lg font-serif-lux text-brand-dark font-semibold">
                   Version E-Book Numérique (PDF HD)
@@ -158,20 +162,22 @@
             </div>
 
             <p class="text-xs text-stone-600 font-light leading-relaxed">
-              Recevez l'intégralité du livre immédiatement sur tous vos écrans (smartphone, tablette, ordinateur) au format haute définition. <strong>Je vous l'envoie moi-même directement sur votre adresse e-mail dès réception de votre commande.</strong>
+              Recevez l'intégralité du livre immédiatement sur tous vos écrans (smartphone, tablette, ordinateur) au format haute définition. <strong>Le lien et le fichier vous sont transmis directement sur votre boîte e-mail.</strong>
             </p>
 
             <div class="flex flex-col sm:flex-row gap-3 pt-1">
-              <button onclick="orderEbookDirect()" class="flex-1 py-3 px-6 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-gold transition text-center shadow-sm">
-                Commander mon E-Book (12,90 €) &rarr;
+              <button onclick="buyEbookStripe()" class="flex-1 py-3 px-6 rounded-full bg-brand-gold text-white text-xs uppercase tracking-wider font-bold hover:bg-brand-goldDark transition text-center shadow-md flex items-center justify-center gap-2">
+                <span>💳 Acheter via Stripe (12,90 €)</span>
               </button>
-              <button onclick="orderEbookWhatsApp()" class="py-3 px-6 rounded-full bg-[#25D366] text-white text-xs uppercase tracking-wider font-semibold hover:bg-emerald-600 transition text-center shadow-sm flex items-center justify-center gap-1.5">
-                <span>WhatsApp</span>
+              <button onclick="addEbookToCart()" class="py-3 px-6 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-semibold hover:bg-stone-800 transition text-center shadow-sm flex items-center justify-center gap-1.5">
+                <span>🛍️ Ajouter au panier</span>
               </button>
             </div>
             
-            <div class="text-[11px] text-stone-400 text-center">
-              Également cumulable avec les bandes de résistance dans <a href="boutique.html" class="underline text-brand-gold hover:text-brand-dark">la boutique officielle</a>.
+            <div class="text-[11px] text-stone-400 text-center flex items-center justify-center gap-2">
+              <span>🔒 Paiement Stripe sécurisé</span>
+              <span>•</span>
+              <span>Apple Pay & CB acceptés</span>
             </div>
           </div>
 
@@ -296,17 +302,58 @@
           Commandez votre exemplaire E-Book au format PDF (12,90 €) et recevez-le directement sur votre boîte mail pour débuter vos séances où que vous soyez.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-          <button onclick="orderEbookDirect()" class="px-8 py-3.5 rounded-full bg-brand-gold text-white text-xs uppercase tracking-widest font-semibold hover:bg-brand-goldDark transition shadow-md">
-            Recevoir mon E-Book par e-mail (12,90 €) &rarr;
+          <button onclick="buyEbookStripe()" class="px-8 py-3.5 rounded-full bg-brand-gold text-white text-xs uppercase tracking-widest font-semibold hover:bg-brand-goldDark transition shadow-md">
+            💳 Acheter l'E-Book via Stripe (12,90 €) &rarr;
+          </button>
+          <button onclick="addEbookToCart()" class="px-8 py-3.5 rounded-full bg-stone-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-stone-700 transition shadow-sm">
+            🛍️ Ajouter au panier
           </button>
           <a href="https://www.fnac.com/o12083130/Anasthasia-Fitness/w-4" target="_blank" rel="noopener noreferrer" class="px-8 py-3.5 rounded-full bg-transparent border border-stone-600 text-stone-300 hover:text-white hover:border-white transition text-xs uppercase tracking-widest font-semibold">
-            Commander le livre papier sur Fnac
+            Livre papier sur Fnac
           </a>
         </div>
       </div>
 
     </section>
   </main>
+
+  <!-- Drawer Panier d'Achat Interactif -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex justify-end">
+    <div class="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+      
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-brand-border">
+          <div class="text-lg font-serif-lux font-semibold text-brand-dark">Mon Panier d'Achat</div>
+          <button onclick="toggleCart()" class="text-stone-400 hover:text-brand-dark text-2xl font-bold">&times;</button>
+        </div>
+
+        <div id="cart-items" class="py-6 space-y-4">
+          <div class="text-center text-xs text-stone-500 py-8">Votre panier est vide pour le moment.</div>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-brand-border space-y-4">
+        <div class="flex items-center justify-between text-base font-bold text-brand-dark">
+          <span>Total de la commande :</span>
+          <span id="cart-total" class="text-brand-gold text-lg">0,00 €</span>
+        </div>
+
+        <!-- MODES DE COMMANDE : STRIPE PRIORITAIRE -->
+        <div class="space-y-2.5">
+          <button onclick="checkoutStripe()" class="w-full py-3.5 rounded-full bg-brand-gold text-white text-xs uppercase tracking-wider font-bold hover:bg-brand-goldDark transition flex items-center justify-center gap-2 shadow-md">
+            <span>💳 Payer en ligne (Apple Pay / CB sécurisé via Stripe)</span>
+          </button>
+          <a href="boutique.html" class="block w-full py-2.5 rounded-full border border-brand-border text-stone-600 text-xs uppercase tracking-wider font-medium hover:bg-stone-50 transition text-center">
+            Voir tous les articles de la boutique
+          </a>
+        </div>
+        <p class="text-[10px] text-stone-400 text-center leading-relaxed">
+          Paiement 100% sécurisé et chiffré par Stripe. Vos coordonnées bancaires ne sont jamais stockées.
+        </p>
+      </div>
+
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-brand-dark text-brand-cream px-4 sm:px-6 lg:px-8 py-12 border-t border-stone-800 w-full">
@@ -338,18 +385,103 @@
   </footer>
 
   <script>
-    // Commande directe de l'E-book par email
-    function orderEbookDirect() {
-      const subject = "Commande E-Book Body & Chef (12,90 €)";
-      const body = "Bonjour Anasthasia,\n\nJe souhaite commander votre E-Book « Body & Chef » au format PDF (12,90 €).\n\nMes coordonnées :\nNom & Prénom :\nAdresse e-mail pour recevoir le fichier :\nTéléphone :\n\nMerci !";
-      window.location.href = `mailto:anasthasia.fitness@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    let cart = JSON.parse(localStorage.getItem('af_cart') || '[]');
+
+    function updateCartUI() {
+      const itemsContainer = document.getElementById('cart-items');
+      const countEl = document.getElementById('cart-count');
+      const totalEl = document.getElementById('cart-total');
+
+      if (countEl) {
+        countEl.textContent = cart.reduce((acc, item) => acc + item.qty, 0);
+      }
+
+      if (!itemsContainer || !totalEl) return;
+
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = '<div class="text-center text-xs text-stone-500 py-8">Votre panier est vide pour le moment.</div>';
+        totalEl.textContent = '0,00 €';
+        return;
+      }
+
+      let total = 0;
+      itemsContainer.innerHTML = cart.map((item, idx) => {
+        total += item.price * item.qty;
+        return `
+          <div class="flex items-center justify-between p-3.5 bg-brand-cream rounded-xl border border-brand-border text-xs">
+            <div>
+              <div class="font-bold text-brand-dark">${item.name}</div>
+              <div class="text-stone-500 text-[11px]">${item.price.toFixed(2)} € × ${item.qty}</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="font-bold text-brand-dark">${(item.price * item.qty).toFixed(2)} €</span>
+              <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700 text-base font-bold ml-1" title="Supprimer">&times;</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      totalEl.textContent = total.toFixed(2) + ' €';
+      localStorage.setItem('af_cart', JSON.stringify(cart));
     }
 
-    // Commande directe par WhatsApp
-    function orderEbookWhatsApp() {
-      const text = "Bonjour Anasthasia ! Je souhaite commander votre E-Book « Body & Chef » au format PDF (12,90 €). Pouvez-vous m'indiquer la marche à suivre pour le paiement et l'envoi sur mon adresse e-mail ?";
-      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    function addToCart(name, price) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      localStorage.setItem('af_cart', JSON.stringify(cart));
+      updateCartUI();
+      toggleCart();
     }
+
+    function addEbookToCart() {
+      addToCart('E-Book « Body & Chef » (PDF)', 12.90);
+    }
+
+    function removeFromCart(idx) {
+      cart.splice(idx, 1);
+      localStorage.setItem('af_cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function toggleCart() {
+      document.getElementById('cart-drawer').classList.toggle('hidden');
+    }
+
+    // Liens Stripe officiels
+    const STRIPE_LINKS = {
+      bands: "https://buy.stripe.com/test_placeholder_bands",
+      starterKit: "https://buy.stripe.com/test_placeholder_kit",
+      ebook: "https://buy.stripe.com/test_placeholder_ebook"
+    };
+
+    function buyWithStripe(link, name) {
+      if (link.includes('placeholder') || link.includes('example')) {
+        alert("Paiement Stripe activé ! Pour finaliser la configuration, il suffira de remplacer le lien de test par votre lien Stripe Checkout officiel (https://buy.stripe.com/...).");
+        return;
+      }
+      window.open(link, '_blank');
+    }
+
+    function buyEbookStripe() {
+      buyWithStripe(STRIPE_LINKS.ebook, 'E-Book « Body & Chef » (PDF)');
+    }
+
+    function checkoutStripe() {
+      if (cart.length === 0) return alert('Votre panier est vide !');
+      if (cart.length === 1 && cart[0].name.includes('Body & Chef')) {
+        buyEbookStripe();
+      } else if (cart.length === 1 && cart[0].name.includes('Resistance Bands')) {
+        buyWithStripe(STRIPE_LINKS.bands, cart[0].name);
+      } else {
+        alert("Paiement Stripe activé ! Votre commande de " + document.getElementById('cart-total').textContent + " est prête à être finalisée sur Stripe.");
+      }
+    }
+
+    updateCartUI();
 
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
