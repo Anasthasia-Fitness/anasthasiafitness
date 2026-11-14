@@ -39,7 +39,7 @@
   <div class="bg-brand-dark text-brand-cream text-[11px] py-2 px-4 text-center tracking-widest uppercase font-medium">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
       <span class="hidden sm:inline">Livraison rapide en France métropolitaine</span>
-      <span>🎀 Boutique officielle : Vos Resistance Bands en tissu doux à 19,90 €</span>
+      <span>🎀 Boutique officielle : Resistance Bands en tissu premium à 19,90 €</span>
       <span class="hidden sm:inline">Paiement 100% sécurisé</span>
     </div>
   </div>
@@ -48,7 +48,7 @@
   <header class="sticky top-0 z-50 bg-brand-cream/95 backdrop-blur-md border-b border-brand-border">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3 group">
-        <img src="https://static.wixstatic.com/media/42b08c_2b161e5848564612811a5b17297a28bb~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/42b08c_2b161e5848564612811a5b17297a28bb~mv2.png" 
+        <img src="assets/logo.png" 
              alt="Logo Anasthasia Fitness" 
              class="w-10 h-10 object-contain rounded-full bg-white p-0.5 border border-brand-border shadow-sm group-hover:scale-105 transition"
              onerror="this.style.display='none'">
@@ -69,9 +69,9 @@
         <a href="contact.html" class="hover:text-brand-gold transition pb-0.5">Contact</a>
       </nav>
 
-      <!-- Panier Toggle -->
+      <!-- Bouton Panier Interactif -->
       <div class="flex items-center gap-3">
-        <button onclick="toggleCart()" class="relative p-2.5 rounded-full bg-white border border-brand-border text-brand-dark hover:border-brand-gold transition flex items-center gap-2 text-xs font-semibold">
+        <button onclick="toggleCart()" class="relative px-4 py-2 rounded-full bg-white border border-brand-border text-brand-dark hover:border-brand-gold transition flex items-center gap-2 text-xs font-semibold shadow-sm">
           <span>🛍️ Panier</span>
           <span id="cart-count" class="w-5 h-5 rounded-full bg-brand-gold text-white text-[10px] flex items-center justify-center font-bold">0</span>
         </button>
@@ -107,52 +107,92 @@
       </div>
     </section>
 
-    <!-- Catalogue Produits -->
-    <section class="px-6 md:px-12 py-16 max-w-5xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- PRODUIT EN VEDETTE : RESISTANCE BANDS AVEC VRAIES PHOTOS -->
+    <section class="px-6 md:px-12 py-14 max-w-5xl mx-auto">
+      <div class="bg-white rounded-3xl p-8 md:p-12 border border-brand-border shadow-lg grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
-        <!-- Produit 1 : Resistance Bands 19,90 € -->
-        <div class="bg-white rounded-3xl p-6 border border-brand-border shadow-sm hover:shadow-lg transition flex flex-col justify-between">
-          <div>
-            <div class="h-48 bg-brand-cream rounded-2xl flex items-center justify-center text-5xl mb-6 relative overflow-hidden">
-              🎀
-              <span class="absolute top-3 right-3 text-[10px] bg-brand-gold text-white font-semibold uppercase px-2.5 py-0.5 rounded-full">
-                Bestseller
-              </span>
-            </div>
-            <div class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold mb-1">Accessoire Phare</div>
-            <h3 class="text-lg font-serif-lux text-brand-dark">Resistance Bands (Élastiques)</h3>
-            <p class="text-xs text-stone-600 font-light mt-2 mb-4 leading-relaxed">
-              Bandes en tissu doux ultra-résistant qui ne roulent pas et ne pincent pas la peau. Idéales pour le travail des fessiers, des cuisses et le gainage.
-            </p>
-            <ul class="text-[11px] text-stone-500 space-y-1 mb-6">
-              <li>✓ 3 niveaux de résistance inclus</li>
-              <li>✓ Pochette de transport nomade offerte</li>
-            </ul>
+        <!-- Galerie Photos Interactive avec Vos Vraies Images Récupérées -->
+        <div class="lg:col-span-6 space-y-4">
+          <!-- Image principale agrandie -->
+          <div class="relative rounded-2xl overflow-hidden border border-brand-border bg-stone-50 shadow-sm aspect-4/3 flex items-center justify-center">
+            <img id="main-product-img" 
+                 src="assets/bands-main.jpg" 
+                 alt="Resistance Bands Anasthasia Fitness" 
+                 class="w-full h-80 object-cover object-center transition duration-300">
+            <span class="absolute top-3 left-3 bg-brand-gold text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full shadow">
+              Bestseller Officiel
+            </span>
           </div>
-          <div class="pt-4 border-t border-brand-border flex items-center justify-between">
-            <div class="text-xl font-bold text-brand-dark">19,90 €</div>
-            <button onclick="addToCart('Resistance Bands (Pack 3 forces)', 19.90)" class="px-5 py-2.5 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-gold transition shadow-sm">
-              Ajouter
+
+          <!-- Miniatures cliquables pour changer l'image -->
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="changePhoto('assets/bands-main.jpg')" class="rounded-xl overflow-hidden border-2 border-brand-gold hover:opacity-80 transition aspect-square">
+              <img src="assets/bands-main.jpg" alt="Pack bandes" class="w-full h-full object-cover">
+            </button>
+            <button onclick="changePhoto('assets/bands-action.jpg')" class="rounded-xl overflow-hidden border border-brand-border hover:border-brand-gold transition aspect-square">
+              <img src="assets/bands-action.jpg" alt="En action" class="w-full h-full object-cover">
+            </button>
+            <button onclick="changePhoto('assets/bands-pouch.jpg')" class="rounded-xl overflow-hidden border border-brand-border hover:border-brand-gold transition aspect-square">
+              <img src="assets/bands-pouch.jpg" alt="Pochette" class="w-full h-full object-cover">
+            </button>
+            <button onclick="changePhoto('assets/bands-pack.jpg')" class="rounded-xl overflow-hidden border border-brand-border hover:border-brand-gold transition aspect-square">
+              <img src="assets/bands-pack.jpg" alt="Zoom matière" class="w-full h-full object-cover">
+            </button>
+          </div>
+          <div class="text-[11px] text-stone-400 text-center italic">Cliquez sur une photo pour l'agrandir</div>
+        </div>
+
+        <!-- Fiche descriptive & Achat -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Le Produit Indispensable</span>
+            <h2 class="text-2xl sm:text-3xl font-serif-lux text-brand-dark">Resistance Bands (Set de 3 Élastiques Tissu)</h2>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl font-bold text-brand-dark">19,90 €</span>
+              <span class="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">En stock • Expédié sous 48h</span>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-light">
+            Conçues sur-mesure pour éliminer tous les défauts des élastiques en latex classiques : <strong>nos bandes en tissu doux ne s'enroulent jamais, ne glissent pas et ne pincent pas la peau</strong> pendant vos mouvements.
+          </p>
+
+          <div class="space-y-2.5 pt-2 border-t border-brand-border text-xs text-stone-700">
+            <div class="flex items-center gap-2"><span class="text-brand-gold font-bold">✓</span> <strong>3 forces progressives :</strong> Light (Rose), Medium (Gris), Heavy (Noir)</div>
+            <div class="flex items-center gap-2"><span class="text-brand-gold font-bold">✓</span> <strong>Tissu premium lavable :</strong> Toucher velouté doux et coutures renforcées</div>
+            <div class="flex items-center gap-2"><span class="text-brand-gold font-bold">✓</span> <strong>Sac de transport offert :</strong> Ultra compact pour s'entraîner partout</div>
+            <div class="flex items-center gap-2"><span class="text-brand-gold font-bold">✓</span> <strong>Guide d'exercices exclusif :</strong> PDF avec mes routines fessiers & cuisses</div>
+          </div>
+
+          <div class="pt-4 flex flex-col sm:flex-row gap-3">
+            <button onclick="addToCart('Resistance Bands (Set de 3)', 19.90)" class="flex-1 py-3.5 rounded-full bg-brand-dark text-white text-xs uppercase tracking-widest font-semibold hover:bg-brand-gold transition shadow-md flex items-center justify-center gap-2">
+              <span>🛍️ Ajouter au panier (19,90 €)</span>
             </button>
           </div>
         </div>
 
-        <!-- Produit 2 : Kit de Démarrage 39,90 € -->
+      </div>
+    </section>
+
+    <!-- AUTRES PRODUITS DU CATALOGUE -->
+    <section class="px-6 md:px-12 py-10 max-w-5xl mx-auto space-y-8">
+      <div class="text-center">
+        <h2 class="text-2xl font-serif-lux text-brand-dark">Complétez votre entraînement</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        
+        <!-- Produit 2 : Kit Démarrage -->
         <div class="bg-white rounded-3xl p-6 border border-brand-border shadow-sm hover:shadow-lg transition flex flex-col justify-between">
           <div>
-            <div class="h-48 bg-brand-cream rounded-2xl flex items-center justify-center text-5xl mb-6 relative overflow-hidden">
-              🎒
+            <div class="h-44 bg-brand-cream rounded-2xl flex items-center justify-center text-4xl mb-4 overflow-hidden">
+              <img src="assets/bands-pack.jpg" alt="Kit de démarrage" class="w-full h-full object-cover">
             </div>
-            <div class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold mb-1">Pack Complet</div>
+            <div class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold mb-1">Pack Avantageux</div>
             <h3 class="text-lg font-serif-lux text-brand-dark">Kit de Démarrage Fitness</h3>
             <p class="text-xs text-stone-600 font-light mt-2 mb-4 leading-relaxed">
-              Le pack parfait pour débuter : set complet de bandes en tissu, élastique de mobilité haute et le livret d'exercices exclusif au format PDF.
+              Le pack complet : vos 3 Resistance Bands + bande longue de mobilité pour le haut du corps + plan d'entraînement complet sur 4 semaines.
             </p>
-            <ul class="text-[11px] text-stone-500 space-y-1 mb-6">
-              <li>✓ Kit d'entraînement nomade complet</li>
-              <li>✓ Programme PDF d'exercices guidés</li>
-            </ul>
           </div>
           <div class="pt-4 border-t border-brand-border flex items-center justify-between">
             <div class="text-xl font-bold text-brand-dark">39,90 €</div>
@@ -162,21 +202,17 @@
           </div>
         </div>
 
-        <!-- Produit 3 : E-Book Recettes & Training 14,90 € -->
+        <!-- Produit 3 : E-Book Body & Chef -->
         <div class="bg-white rounded-3xl p-6 border border-brand-border shadow-sm hover:shadow-lg transition flex flex-col justify-between">
           <div>
-            <div class="h-48 bg-brand-cream rounded-2xl flex items-center justify-center text-5xl mb-6 relative overflow-hidden">
-              📱
+            <div class="h-44 bg-brand-cream rounded-2xl flex items-center justify-center text-4xl mb-4 overflow-hidden">
+              <img src="assets/book-cover.jpg" alt="E-Book Body & Chef" class="h-36 object-contain">
             </div>
-            <div class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold mb-1">Format Numérique</div>
-            <h3 class="text-lg font-serif-lux text-brand-dark">E-Book Fitness & Recettes</h3>
+            <div class="text-[10px] uppercase tracking-wider text-brand-gold font-semibold mb-1">Version Numérique Instantanée</div>
+            <h3 class="text-lg font-serif-lux text-brand-dark">E-Book Recettes & Fitness</h3>
             <p class="text-xs text-stone-600 font-light mt-2 mb-4 leading-relaxed">
-              La version numérique instantanée : mes conseils nutritionnels clés, 20 fiches recettes express et un plan d'entraînement sur 4 semaines.
+              Téléchargement immédiat : l'intégralité de mes fiches repas équilibrés de chefs, conseils métaboliques et circuits sans matériel.
             </p>
-            <ul class="text-[11px] text-stone-500 space-y-1 mb-6">
-              <li>✓ Téléchargement immédiat par e-mail</li>
-              <li>✓ Compatible smartphone, tablette et ordi</li>
-            </ul>
           </div>
           <div class="pt-4 border-t border-brand-border flex items-center justify-between">
             <div class="text-xl font-bold text-brand-dark">14,90 €</div>
@@ -188,39 +224,62 @@
 
       </div>
     </section>
+
+    <!-- SECTION COMMENT ÇA SE PASSE ? (RÉASSURANCE) -->
+    <section class="px-6 md:px-12 py-12 bg-white border-t border-brand-border">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center text-xs text-stone-600">
+        <div class="space-y-2">
+          <span class="text-2xl">📦</span>
+          <div class="font-bold text-brand-dark uppercase tracking-wider">Expédition Express</div>
+          <p class="font-light">Colis soigné envoyé sous 24 à 48h ouvrées avec numéro de suivi postal.</p>
+        </div>
+        <div class="space-y-2">
+          <span class="text-2xl">🔒</span>
+          <div class="font-bold text-brand-dark uppercase tracking-wider">Paiement Garanti</div>
+          <p class="font-light">Règlement direct et sécurisé sans frais cachés ni intermédiaire douteux.</p>
+        </div>
+        <div class="space-y-2">
+          <span class="text-2xl">💬</span>
+          <div class="font-bold text-brand-dark uppercase tracking-wider">Contact Direct</div>
+          <p class="font-light">Un service personnalisé : Anasthasia et son équipe répondent à toutes vos questions.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Panier Coulissant / Tiroir Modal en JavaScript -->
+  <!-- Panier Coulissant / Modal -->
   <div id="cart-drawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm hidden flex justify-end">
     <div class="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
       
       <div>
         <div class="flex items-center justify-between pb-4 border-b border-brand-border">
-          <div class="text-lg font-serif-lux font-semibold text-brand-dark">Mon Panier</div>
-          <button onclick="toggleCart()" class="text-stone-400 hover:text-brand-dark text-xl font-bold">&times;</button>
+          <div class="text-lg font-serif-lux font-semibold text-brand-dark">Mon Panier d'Achat</div>
+          <button onclick="toggleCart()" class="text-stone-400 hover:text-brand-dark text-2xl font-bold">&times;</button>
         </div>
 
         <div id="cart-items" class="py-6 space-y-4">
-          <!-- Injecté dynamiquement par JS -->
           <div class="text-center text-xs text-stone-500 py-8">Votre panier est vide pour le moment.</div>
         </div>
       </div>
 
       <div class="pt-6 border-t border-brand-border space-y-4">
-        <div class="flex items-center justify-between text-sm font-bold text-brand-dark">
-          <span>Total :</span>
-          <span id="cart-total">0,00 €</span>
+        <div class="flex items-center justify-between text-base font-bold text-brand-dark">
+          <span>Total de la commande :</span>
+          <span id="cart-total" class="text-brand-gold text-lg">0,00 €</span>
         </div>
 
+        <!-- 2 MODES DE COMMANDE SIMPLES & SANS FRAIS WIX -->
         <div class="space-y-2">
-          <button onclick="checkoutWhatsApp()" class="w-full py-3 rounded-full bg-[#25D366] text-white text-xs uppercase tracking-wider font-bold hover:bg-[#20ba59] transition flex items-center justify-center gap-2 shadow">
-            <span>💬 Valider la commande via WhatsApp</span>
+          <button onclick="checkoutWhatsApp()" class="w-full py-3.5 rounded-full bg-[#25D366] text-white text-xs uppercase tracking-wider font-bold hover:bg-[#20ba59] transition flex items-center justify-center gap-2 shadow">
+            <span>💬 Valider et commander via WhatsApp</span>
           </button>
-          <button onclick="checkoutEmail()" class="w-full py-3 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-bold hover:bg-brand-gold transition flex items-center justify-center gap-2">
-            <span>✉️ Commander par E-mail</span>
+          <button onclick="checkoutEmail()" class="w-full py-3.5 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-bold hover:bg-brand-gold transition flex items-center justify-center gap-2">
+            <span>✉️ Commander par E-mail direct</span>
           </button>
         </div>
-        <p class="text-[10px] text-stone-400 text-center">Paiement par virement ou lien sécurisé lors de la validation.</p>
+        <p class="text-[10px] text-stone-400 text-center leading-relaxed">
+          Validation instantanée. Paiement simple par virement ou lien sécurisé lors de la confirmation.
+        </p>
       </div>
 
     </div>
@@ -250,13 +309,17 @@
       <div>© 2026 Anasthasia Fitness. Tous droits réservés.</div>
       <div class="flex gap-4 mt-2 sm:mt-0">
         <a href="contact.html" class="hover:underline">Mentions Légales</a>
-        <a href="contact.html" class="hover:underline">Politique de Confidentialité</a>
+        <a href="contact.html" class="hover:underline">Conditions Générales de Vente</a>
       </div>
     </div>
   </footer>
 
-  <!-- Script Panier Interactif -->
+  <!-- Script Panier & Galerie Photos -->
   <script>
+    function changePhoto(src) {
+      document.getElementById('main-product-img').src = src;
+    }
+
     let cart = JSON.parse(localStorage.getItem('af_cart') || '[]');
 
     function updateCartUI() {
@@ -276,14 +339,14 @@
       itemsContainer.innerHTML = cart.map((item, idx) => {
         total += item.price * item.qty;
         return `
-          <div class="flex items-center justify-between p-3 bg-brand-cream rounded-xl border border-brand-border text-xs">
+          <div class="flex items-center justify-between p-3.5 bg-brand-cream rounded-xl border border-brand-border text-xs">
             <div>
               <div class="font-bold text-brand-dark">${item.name}</div>
-              <div class="text-stone-500">${item.price.toFixed(2)} € × ${item.qty}</div>
+              <div class="text-stone-500 text-[11px]">${item.price.toFixed(2)} € × ${item.qty}</div>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-3">
               <span class="font-bold text-brand-dark">${(item.price * item.qty).toFixed(2)} €</span>
-              <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700 ml-2">&times;</button>
+              <button onclick="removeFromCart(${idx})" class="text-red-500 hover:text-red-700 text-base font-bold ml-1" title="Supprimer">&times;</button>
             </div>
           </div>
         `;
@@ -315,26 +378,26 @@
 
     function checkoutWhatsApp() {
       if (cart.length === 0) return alert('Votre panier est vide !');
-      let text = "Bonjour Anasthasia ! Je souhaite commander sur votre boutique :\n";
+      let text = "Bonjour Anasthasia ! Je souhaite commander sur votre boutique :\n\n";
       let total = 0;
       cart.forEach(item => {
-        text += `- ${item.name} (Qté : ${item.qty}) : ${(item.price * item.qty).toFixed(2)} €\n`;
+        text += `• ${item.name} (Quantité : ${item.qty}) : ${(item.price * item.qty).toFixed(2)} €\n`;
         total += item.price * item.qty;
       });
-      text += `\nTotal : ${total.toFixed(2)} €\nMerci !`;
+      text += `\nTotal : ${total.toFixed(2)} €\n\nMerci de me confirmer la disponibilité et le règlement !`;
       window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
     }
 
     function checkoutEmail() {
       if (cart.length === 0) return alert('Votre panier est vide !');
-      let subject = "Nouvelle commande Anasthasia Fitness";
-      let body = "Bonjour Anasthasia,\n\nJe souhaite passer commande pour les articles suivants :\n";
+      let subject = "Nouvelle commande boutique Anasthasia Fitness";
+      let body = "Bonjour Anasthasia,\n\nJe souhaite passer commande pour les articles suivants :\n\n";
       let total = 0;
       cart.forEach(item => {
         body += `- ${item.name} (Qté : ${item.qty}) : ${(item.price * item.qty).toFixed(2)} €\n`;
         total += item.price * item.qty;
       });
-      body += `\nTotal estimé : ${total.toFixed(2)} €\n\nMes coordonnées de livraison :\nNom :\nAdresse :\nTéléphone :\n`;
+      body += `\nTotal : ${total.toFixed(2)} €\n\nMes coordonnées de livraison :\nNom & Prénom :\nAdresse postale complète :\nNuméro de téléphone :\n\nMerci !`;
       window.location.href = `mailto:anasthasia.fitness@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
 
