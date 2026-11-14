@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réserver un Coaching en Ligne | Anasthasia Fitness</title>
+  <meta name="description" content="Réservez votre séance de coaching privé à domicile à Paris 15e ou votre bilan personnalisé en visio avec Anasthasia Fitness.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#F9F8F5',
+              dark: '#1A1A1A',
+              gold: '#C5A059',
+              goldDark: '#A88642',
+              sand: '#EAE5DE',
+              border: '#E8E2D8'
+            }
+          },
+          fontFamily: {
+            serif: ['Didot', 'Playfair Display', 'Baskerville', 'Georgia', 'serif'],
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .font-serif-lux { font-family: "Didot", "Playfair Display", "Baskerville", "Georgia", serif; }
+  </style>
+</head>
+<body class="bg-brand-cream text-brand-dark font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-brand-dark text-brand-cream text-[11px] py-2 px-4 text-center tracking-widest uppercase font-medium">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
+      <span class="hidden sm:inline">Paris 15e • Diplômée d'État BPJEPS AGFF</span>
+      <span>📅 Réservations ouvertes pour les séances à domicile & visio</span>
+      <a href="https://instagram.com/Anasthasia_fitness" target="_blank" class="hover:text-brand-gold transition underline hidden sm:inline">@Anasthasia_fitness</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-brand-cream/95 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="https://static.wixstatic.com/media/42b08c_2b161e5848564612811a5b17297a28bb~mv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/42b08c_2b161e5848564612811a5b17297a28bb~mv2.png" 
+             alt="Logo Anasthasia Fitness" 
+             class="w-10 h-10 object-contain rounded-full bg-white p-0.5 border border-brand-border shadow-sm group-hover:scale-105 transition"
+             onerror="this.style.display='none'">
+        <div>
+          <span class="text-xl font-serif-lux tracking-widest uppercase font-semibold text-brand-dark block leading-none">
+            Anasthasia
+          </span>
+          <span class="text-[10px] tracking-widest text-brand-gold uppercase font-semibold">Fitness & Lifestyle</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-medium text-stone-700">
+        <a href="index.html" class="hover:text-brand-gold transition pb-0.5">Home</a>
+        <a href="philosophie.html" class="hover:text-brand-gold transition pb-0.5">Ma philosophie</a>
+        <a href="livre.html" class="hover:text-brand-gold transition pb-0.5">Mon livre</a>
+        <a href="boutique.html" class="hover:text-brand-gold transition pb-0.5">Boutique</a>
+        <a href="reserver.html" class="text-brand-gold border-b-2 border-brand-gold pb-0.5">Réserver en ligne</a>
+        <a href="contact.html" class="hover:text-brand-gold transition pb-0.5">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#formulaire-reservation" class="hidden sm:inline-block px-5 py-2.5 rounded-full bg-brand-dark text-brand-cream text-xs uppercase tracking-widest font-semibold hover:bg-brand-gold transition shadow-sm">
+          Réserver
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-dark hover:text-brand-gold focus:outline-none" aria-label="Ouvrir le menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-brand-border bg-white px-6 py-4 space-y-3 text-xs uppercase tracking-wider font-medium text-stone-700">
+      <a href="index.html" class="block py-1 hover:text-brand-gold">Home</a>
+      <a href="philosophie.html" class="block py-1 hover:text-brand-gold">Ma philosophie</a>
+      <a href="livre.html" class="block py-1 hover:text-brand-gold">Mon livre</a>
+      <a href="boutique.html" class="block py-1 hover:text-brand-gold">Boutique</a>
+      <a href="reserver.html" class="block py-1 text-brand-gold font-bold">Réserver en ligne</a>
+      <a href="contact.html" class="block py-1 hover:text-brand-gold">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Réserver -->
+    <section class="px-6 md:px-12 py-16 bg-[#F4EFE9] border-b border-brand-border text-center">
+      <div class="max-w-3xl mx-auto space-y-4">
+        <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Accompagnement Sur-Mesure</span>
+        <h1 class="text-3xl md:text-5xl font-serif-lux text-brand-dark font-normal">
+          Réserver Votre Coaching
+        </h1>
+        <p class="text-stone-600 text-sm md:text-base leading-relaxed font-light max-w-xl mx-auto">
+          Séances individuelles à domicile à Paris 15e et environs, coaching en extérieur ou bilans à distance en visioconférence.
+        </p>
+      </div>
+    </section>
+
+    <!-- Les Formules -->
+    <section class="px-6 md:px-12 py-16 max-w-5xl mx-auto space-y-12">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Formule 1 : Séance Solo -->
+        <div class="bg-white rounded-3xl p-8 border border-brand-border shadow-sm flex flex-col justify-between hover:border-brand-gold transition">
+          <div>
+            <div class="text-xs uppercase tracking-widest text-brand-gold font-semibold mb-2">Exclusif • 1h</div>
+            <h3 class="text-xl font-serif-lux text-brand-dark mb-3">Coaching Privé Solo</h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed mb-6">
+              Séance 100% individualisée à domicile à Paris ou en studio. Analyse posturale, exercices ciblés et ajustements en temps réel.
+            </p>
+            <ul class="text-xs text-stone-500 space-y-2 mb-6">
+              <li>✓ Matériel complet apporté par la coach</li>
+              <li>✓ Posture protégée (Pilates de Gasquet)</li>
+              <li>✓ Conseils nutritionnels de fin de séance</li>
+            </ul>
+          </div>
+          <div>
+            <button onclick="prefillBooking('Coaching Privé Solo')" class="w-full py-3 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-gold transition">
+              Choisir cette formule
+            </button>
+          </div>
+        </div>
+
+        <!-- Formule 2 : Bilan Visio -->
+        <div class="bg-white rounded-3xl p-8 border-2 border-brand-gold/50 shadow-md flex flex-col justify-between hover:border-brand-gold transition relative">
+          <span class="absolute -top-3 right-6 bg-brand-gold text-white text-[10px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full">
+            Accessible Partout
+          </span>
+          <div>
+            <div class="text-xs uppercase tracking-widest text-brand-gold font-semibold mb-2">Visio • 45 min</div>
+            <h3 class="text-xl font-serif-lux text-brand-dark mb-3">Bilan Sportif & Nutrition</h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed mb-6">
+              Entretien approfondi en visioconférence pour analyser vos habitudes, débloquer votre métabolisme et construire votre plan d'action.
+            </p>
+            <ul class="text-xs text-stone-500 space-y-2 mb-6">
+              <li>✓ Diagnostic morphologique & rythme de vie</li>
+              <li>✓ Rééquilibrage alimentaire personnalisé</li>
+              <li>✓ Fiche récapitulative envoyée par email</li>
+            </ul>
+          </div>
+          <div>
+            <button onclick="prefillBooking('Bilan Sportif & Nutrition (Visio)')" class="w-full py-3 rounded-full bg-brand-gold text-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-goldDark transition shadow-sm">
+              Choisir cette formule
+            </button>
+          </div>
+        </div>
+
+        <!-- Formule 3 : Pack 10 Séances -->
+        <div class="bg-white rounded-3xl p-8 border border-brand-border shadow-sm flex flex-col justify-between hover:border-brand-gold transition">
+          <div>
+            <div class="text-xs uppercase tracking-widest text-brand-gold font-semibold mb-2">Suivi Continu</div>
+            <h3 class="text-xl font-serif-lux text-brand-dark mb-3">Pack Transformation</h3>
+            <p class="text-xs text-stone-600 font-light leading-relaxed mb-6">
+              Un accompagnement complet sur 10 séances pour ancrer des résultats profonds et durables avec suivi WhatsApp direct.
+            </p>
+            <ul class="text-xs text-stone-500 space-y-2 mb-6">
+              <li>✓ 10 séances d'1 heure programmées</li>
+              <li>✓ Plan d'entraînement personnalisé</li>
+              <li>✓ Accès direct WhatsApp 7j/7 pour vos questions</li>
+            </ul>
+          </div>
+          <div>
+            <button onclick="prefillBooking('Pack Transformation (10 Séances)')" class="w-full py-3 rounded-full bg-brand-dark text-white text-xs uppercase tracking-wider font-semibold hover:bg-brand-gold transition">
+              Choisir cette formule
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formulaire de Prise de Rendez-vous -->
+      <div id="formulaire-reservation" class="bg-white p-8 md:p-12 rounded-3xl border border-brand-border shadow-lg max-w-3xl mx-auto space-y-6">
+        
+        <div class="text-center space-y-1">
+          <span class="text-xs uppercase tracking-widest text-brand-gold font-semibold">Étape Simple</span>
+          <h2 class="text-2xl font-serif-lux text-brand-dark">Envoyer ma demande de créneau</h2>
+          <p class="text-xs text-stone-500">Je vous réponds sous 24h avec confirmation et modalités d'accès.</p>
+        </div>
+
+        <form id="booking-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-stone-600 font-medium mb-1">Prestation choisie *</label>
+              <select id="book-service" required class="w-full px-4 py-2.5 rounded-xl border border-brand-border text-xs bg-brand-cream focus:outline-none focus:border-brand-gold">
+                <option value="Coaching Privé Solo">Coaching Privé Solo (1h Paris)</option>
+                <option value="Bilan Sportif & Nutrition (Visio)">Bilan Sportif & Nutrition (45 min Visio)</option>
+                <option value="Pack Transformation (10 Séances)">Pack Transformation (10 Séances)</option>
+                <option value="Autre demande">Autre / Duo</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-stone-600 font-medium mb-1">Créneau préféré *</label>
+              <select id="book-time" required class="w-full px-4 py-2.5 rounded-xl border border-brand-border text-xs bg-brand-cream focus:outline-none focus:border-brand-gold">
+                <option value="Matin (8h - 12h)">Matin (8h - 12h)</option>
+                <option value="Midi (12h - 14h)">Midi (12h - 14h)</option>
+                <option value="Après-midi (14h - 18h)">Après-midi (14h - 18h)</option>
+                <option value="Soir (18h - 20h)">Soir (18h - 20h)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-stone-600 font-medium mb-1">Nom & Prénom *</label>
+              <input type="text" id="book-name" required placeholder="Votre nom complet" class="w-full px-4 py-2.5 rounded-xl border border-brand-border text-xs bg-brand-cream focus:outline-none focus:border-brand-gold">
+            </div>
+            <div>
+              <label class="block text-xs uppercase tracking-wider text-stone-600 font-medium mb-1">Téléphone *</label>
+              <input type="tel" id="book-phone" required placeholder="06 00 00 00 00" class="w-full px-4 py-2.5 rounded-xl border border-brand-border text-xs bg-brand-cream focus:outline-none focus:border-brand-gold">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-stone-600 font-medium mb-1">Adresse E-mail *</label>
+            <input type="email" id="book-email" required placeholder="votre@email.com" class="w-full px-4 py-2.5 rounded-xl border border-brand-border text-xs bg-brand-cream focus:outline-none focus:border-brand-gold">
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-wider text-stone-600 font-medium mb-1">Vos objectifs ou antécédents médicaux</label>
+            <textarea id="book-notes" rows="3" placeholder="Ex : Remise en forme, tonification silhouette, mal de dos, reprise après grossesse..." class="w-full px-4 py-2.5 rounded-xl border border-brand-border text-xs bg-brand-cream focus:outline-none focus:border-brand-gold"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-3.5 rounded-full bg-brand-dark text-white text-xs uppercase tracking-widest font-semibold hover:bg-brand-gold transition shadow-md">
+              Envoyer ma demande de réservation &rarr;
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-dark text-brand-cream px-6 md:px-12 py-12 border-t border-stone-800">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <div class="text-lg font-serif-lux tracking-widest uppercase text-white font-semibold">
+          Anasthasia <span class="text-brand-gold font-light text-xs">Fitness</span>
+        </div>
+        <p class="text-[11px] text-stone-400 mt-1 font-light">
+          Personal Trainer Diplômée d'État • Paris 15e • anasthasia.fitness@gmail.com
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 text-xs text-stone-300 uppercase tracking-wider font-medium">
+        <a href="index.html" class="hover:text-white transition">Home</a>
+        <a href="philosophie.html" class="hover:text-white transition">Ma Philosophie</a>
+        <a href="livre.html" class="hover:text-white transition">Mon Livre</a>
+        <a href="boutique.html" class="hover:text-white transition">Boutique</a>
+        <a href="reserver.html" class="text-brand-gold">Réserver</a>
+        <a href="contact.html" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto mt-8 pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-[10px] text-stone-500">
+      <div>© 2026 Anasthasia Fitness. Tous droits réservés.</div>
+      <div class="flex gap-4 mt-2 sm:mt-0">
+        <a href="contact.html" class="hover:underline">Mentions Légales</a>
+        <a href="contact.html" class="hover:underline">Politique de Confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function prefillBooking(serviceName) {
+      document.getElementById('book-service').value = serviceName;
+      document.getElementById('formulaire-reservation').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const service = document.getElementById('book-service').value;
+      const time = document.getElementById('book-time').value;
+      const name = document.getElementById('book-name').value;
+      const phone = document.getElementById('book-phone').value;
+      const email = document.getElementById('book-email').value;
+      const notes = document.getElementById('book-notes').value;
+
+      const subject = `Demande de réservation : ${service} - ${name}`;
+      const body = `Bonjour Anasthasia,\n\nJe souhaite réserver un créneau pour :\n- Prestation : ${service}\n- Créneau souhaité : ${time}\n\nMes coordonnées :\n- Nom : ${name}\n- Téléphone : ${phone}\n- E-mail : ${email}\n\nObjectifs / Message :\n${notes}\n\nMerci !`;
+
+      window.location.href = `mailto:anasthasia.fitness@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
